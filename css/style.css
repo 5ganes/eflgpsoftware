@@ -1,0 +1,276 @@
+body
+ {
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+   	background-size: 100% 100%;
+    background: #DDEFDA;
+}
+.wrapper
+{
+	width:1100px;
+	border:1px solid #A5DEFF;
+	/*margin-left:10%;*/ margin: 0 auto;
+	background: #fff
+}
+
+.header
+{
+    background-color:#A5DEFF;
+    padding:1%;
+    /*height:175px;*/
+}
+.header-top{display: flex; justify-content: space-around;}
+
+.logo
+{
+	/*float:left;*/
+}
+
+.flag
+{
+	margin-left:35px;
+}
+
+.main-nav
+{
+	min-height: 30px;
+}
+.main-nav .navbar-collapse
+{
+	padding: 0px;
+	background-color:rgb(67, 109, 132)!important;	
+}
+.main-nav .nav .nav-item
+ {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: 'open sans', arial, sans-serif;
+  
+}
+.main-nav .nav .nav-item a {
+  color: #fff;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  border-right:1px solid #ccc;
+}
+.main-nav .nav .nav-item:last-child a 
+{
+	border:none;
+}
+.main-nav .nav .nav-item a:hover
+{
+	background:#4678a1;
+  	color: #FFF;
+}
+.main-nav .nav .nav-item a >active
+{
+	background:red
+    color: black;
+}
+
+.nav li ul{display: none; width: 200px; position: absolute; background: rgb(67, 109, 132);margin: 0;padding: 1%;}
+.nav li ul li{list-style: none;padding: 1% 0;}
+.nav li ul li a{text-decoration: none; display: block;width: 100%; padding: 3%;}
+.nav li:hover ul{display: block;}
+
+
+.center-text {
+	text-align:center;
+	line-height: 11px;
+}
+.center-text p {
+	/*font-size:16px;*/
+  font-size: 20px;
+	font-weight:bold;
+	color:#006699;
+}
+.center-text h4,h5
+{
+	margin-left:100px;
+}
+.center-text h3 
+{
+	margin-top:10px;
+	font-weight:bold;
+	color: #0e6330;
+  	font-size: 27px;
+  	/**/
+  	margin-left: 49px;
+    margin-right: -70px;
+}
+section
+{
+	
+}
+.container
+{
+	padding:12% 25%;
+	/*margin-left:18%;*/
+}
+
+#login-form
+{
+	height: 96px;
+    margin-top: 2%;
+    width: 30%;
+}
+
+footer
+{
+	padding:5%;
+	text-align: center;
+	background-color:#A5DEFF;
+	clear:both;
+}
+
+/* ------------BELOW CSS CODE ARE ONLY FOR THE INDEX.HTML CONTENTS-------------------*/
+
+/* SIDE MENUBAR*/
+
+.side-bar
+{
+	width: 19%;
+    float: left;
+    padding: 0.5% 1%;
+}
+
+.main
+{
+	background-color:white;
+}
+.menu
+{
+	margin:0px;
+	padding:0px;
+}
+
+.side-bar ul
+{
+	list-style-type: none;
+}
+.menu li p
+{
+	padding: 5px 10px;
+    margin: 0
+}
+.menu li a
+{
+	text-decoration: none;
+	font: normal 11px Tahoma, Geneva, sans-serif;
+    color: #000;
+}
+
+.menu li ul 
+{
+    margin: 0;
+    padding: 0;
+    background: #ececec;
+}
+.menu li 
+{
+    margin: 0;
+    padding: 0;
+    background: #659cb9;
+    color: #FFF;
+    font: bold 13px Tahoma, sans-serif;
+}
+.menu li li
+{
+	background: #ececec;
+    list-style-position: inside;
+    color: #000;
+    list-style-type: disc;
+    border-bottom: 1px solid ;
+    padding: 5px 12px;
+}
+
+
+/*--------------BELOW CSS IS ONLY FOR THE FROM ON THE PAGE-------------*/
+
+.main
+{
+	    width: 80%;
+    /* margin-left: 190px; */
+    float: left;
+    padding: 1%;
+    BORDER: 1px solid;
+    margin: 1% 0;
+
+}
+
+.main_container
+{
+	
+	padding: 0px;
+}
+
+.main form
+{
+  padding-left:40px;
+}
+
+.main table td {
+   
+    padding-left: 0px; width: 210px;
+}
+#element_8,#element_6,#element_7,#element_2,#element_4,#element_5
+{
+  height: 30px;
+  width: 200px;
+  margin:2px;
+}
+#element_3
+{
+  height:90px;
+  width:400px;
+  margin:2px;
+}
+
+.submit_button
+{
+  margin:0px 10px 0px 0px;
+}
+
+.form_description
+{
+  margin-left:27px;
+}
+
+.login-form{line-height: 8px;width: 100%;}
+.login-form input{width: 100%; padding: 2%;}
+.login-form input:last-child{height: 30px;}
+
+.warning{color:red;}
+
+.heading2{
+  font-size: 12px;
+    font-weight: bold;
+    height: 25px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: rgb(67, 109, 132)!important;
+    padding: 3px;
+}
+
+.ndp-corner-all table{width: 100% !important}
+
+
+.prtitle {border-bottom: 2px solid;color: #004600;font-size: 17px;font-weight: bold;margin: 0 25px;padding: 15px 0 5px;}
+
+/*------------------------------------------------------*/
+
+/* MEDIA QUERIES*/
+/*------------------------------------------------------*/
+
+@media only screen and (max-width: 500px) {
+    body 
+    {
+        background-color: lightblue;
+    }
+}

@@ -2295,14 +2295,29 @@ class Program
 
     function getTableDataByFiscalYearAndUserId($fiscalYear,$userId)
     {
+        // print_r(count($fiscalYear)); die();
         global $conn;
-        $fiscalYear = join("','", $fiscalYear);
-        $userId = cleanQuery($userId);  
-        $sql = "SElECT sum(target) as target,sum(achievement) as achievement FROM tbl_outputindicator where userId='$userId' and fiscalYear in('$fiscalYear') ORDER BY weight";
-        // echo $sql; die();
-        $result = $conn->exec($sql);
-        // echo $conn->numRows($result); die();
-        return $result;
+        // $fiscalYear = join("','", $fiscalYear);
+        // $userId = cleanQuery($userId);  
+        // $sql = "SElECT sum(target) as target,sum(achievement) as achievement,fiscalYear FROM tbl_outputindicator where userId='$userId' and fiscalYear in('$fiscalYear') group by fiscalYear ORDER BY weight";
+        // // echo $sql; die();
+        // $result = $conn->exec($sql);
+        // // echo $conn->numRows($result); die();
+        // return $result;
+
+        // test code
+        // $fiscalYear = explode(',', $fiscalYear); $fiscalYear = array_values($fiscalYear);
+        // print_r($fiscalYear); die();
+        for($i=0;$i<count($fiscalYear);$i++){
+            $fs = $fiscalYear[$i];
+            $sql = mysql_fetch_array($conn->exec("SElECT sum(target) as target,sum(achievement) as achievement FROM tbl_outputindicator where 
+                userId='$userId' and fiscalYear = '$fs'"));
+            $t[$i.'t'] = $sql['target'];
+            $t[$i.'a'] = $sql['achievement'];
+        }
+        // print_r($t); die();
+        return $t;
+        // test code ends here
     }
     
     function getByTypeAndId($type,$id)

@@ -5,7 +5,7 @@ define("ADMIN_LEFT_WIDTH", "20%");
 define("ADMIN_BODY_WIDTH", "80%");
 define("ADMIN_TITLE", "Admin Control Panel");
 define("PAGE_TITLE", "Environment Friendly Local Governance Program");
-define("SITE_URL", "http://localhost/mrsmp/");
+define("SITE_URL", "http://localhost/eflgpsoftware/");
 
 
 ////////////////IMAGE FOLDER LOCATIONS////////////////////////

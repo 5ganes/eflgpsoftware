@@ -12,7 +12,7 @@
 			$this->host = "localhost";
 			$this->uname = "root"; 		
 			$this->psw = "";					
-			$this->dbname = "software";
+			$this->dbname = "eflgpsoftware";
 			
 			/*$this->host = "localhost";
 			$this->uname = "root"; 		

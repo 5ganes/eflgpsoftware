@@ -4,10 +4,16 @@
 ?>
 <style type="text/css">
     .bar{font-size: 14px;}
-    .bar div{float: left; padding: 1%;font-weight: bold;}
-    .generate{padding: 0.5% 2%;background: rgb(67, 109, 132);color: white;}
+    .bar div{float: left; padding: 1%;font-weight: bold;width: 25%;}
+    .generate{padding: 0.5% 2%;background: rgb(67, 109, 132);color: white;margin: 0.6% 0 0px 8%;}
     .generate:hover{background: rgb(67, 86, 125);}
 </style>
+
+<!-- dropdown multiple select css and javascript -->
+    <link rel="stylesheet" type="text/css" href="dropdownmultipleselect/style.css">
+    <script type="text/javascript" src="dropdownmultipleselect/script.js"></script>
+<!-- dropdown multiple select css and javascript ends -->
+
   <nav class="main-nav" role="navigation">
       <?php require 'menu.php' ?>
   </nav>
@@ -31,19 +37,30 @@
                 <tr><td>&nbsp;</td></tr>
                 <tr>
                     <td>
-                        <form method="post" action="bargraph.php" class="bar">
-                            <div>Select Fiscal Years :</div>
+                        <form method="post" action="bargraph.php" class="bar" id="myForm">
                             <div>
-                                <select name="fiscalYear[]" style="width:200px; height: 200px; padding:2px;" multiple required>
+                                <span id="fiscalYear">Select Fiscal Years</span>
+                                <div id="box" style="width:200px; padding:2px;">
+                                    <ul style="margin: 0;padding: 0">
+                                        <li id="checkall"> Check All </li>
+                                        <?php
+                                        for($year=2070;$year<=date("y")+2056;$year++){ 
+                                            $check=$year."/".($year+1);?>
+                                            <li><input type="checkbox" name="fiscalYear[]" value="<?php echo $check;?>"> &nbsp; <?php echo $check;?></li>
+                                        <?php }?>
+                                    </ul>
+                                </div>
+
+                                <!-- <select name="fiscalYear[]" style="width:200px; height: 200px; padding:2px;" multiple required>
                                     <?php
-                                    for($year=2050;$year<=date("y")+2056;$year++){ 
+                                    for($year=2070;$year<=date("y")+2056;$year++){ 
                                         $check=$year."/".($year+1);?>
                                         <option value="<? echo $check;?>" 
                                             <?php if($check==$fiscalYear){ echo 'selected="selected"';}?>>
                                             <?php echo $check;?>
                                         </option>    
                                     <?php }?>
-                                </select>
+                                </select> -->
                             </div>
                             <div style="clear: both"></div>
                             <input class="generate" type="submit" name="report" value="Generate Report">
@@ -58,13 +75,11 @@
                     if(isset($_POST['report'])){
                       // print_r($_POST['fiscalYear']); die();
                         $result=$program->getTableDataByFiscalYearAndUserId($_POST['fiscalYear'],$userGet['id']);
-                        while($row = $conn->fetchArray($result))
-                        {
-                          // echo 'sdf'; die();
-                          $target[]=$row['target'];
-                          $achievement[]=$row['achievement'];
+                        for($i=0;$i<count($result)/2;$i++){
+                          $target[]=$result[$i.'t'];
+                          $achievement[]=$result[$i.'a'];
                         }
-                        // print_r($target); die();
+                        // print_r($target); print_r($achievement); die();
                         $target[]=0; $achievement[]=0;
                         $target=json_encode($target);
                         $achievement=json_encode($achievement);
@@ -74,11 +89,11 @@
                             execute('<?php echo json_encode($_POST);?>','<?php echo $target;?>','<?php echo $achievement;?>');
                             function execute(post, target, achievement){
                                 var json=JSON.parse(post);
-                                console.log(json);
+                                // console.log(json);
                                 var jsontarget=JSON.parse(target);
-                                console.log(jsontarget);
+                                // console.log(jsontarget);
                                 var jsonachievement=JSON.parse(achievement);
-                                console.log(jsonachievement);
+                                // console.log(jsonachievement);
 
                                 var levels='';
                                 levels=json["fiscalYear"];
@@ -102,7 +117,7 @@
                                 };
                                 window.onload = function() {
                                     var title =' [ ';
-                                    title+= 'Target: '+json["target"]+' vs Achevement: '+json["achievement"];
+                                    title+= 'Target '+' vs Achevement';
                                     title+=' ]';
 
                                     var ctx = document.getElementById("canvas").getContext("2d");

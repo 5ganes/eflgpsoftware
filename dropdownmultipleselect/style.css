@@ -1,0 +1,5 @@
+#fiscalYear{padding: 1%;padding: 1.5% 10%;background: #659cb9;color: white;margin: 0.6% 0 0px 8%;cursor: pointer;}
+#fiscalYear:hover{background:rgb(67, 109, 132);}
+#box{position: absolute;overflow: hidden;margin-left: 0.81%;box-shadow: 6px 7px 18px #888888}
+#box ul li{background: #a2cce2;padding: 4% 4%; border-bottom: 1px solid #689eb9;cursor: pointer}
+#box ul li:hover{background: #70a7c3;}

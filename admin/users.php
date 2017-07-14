@@ -354,8 +354,8 @@ if($_GET['type']=="del")
                             <td style="" width="90">Username</td>
 
                             <td style="" width="90">Password</td>
-                            <td style="" width="90">User type</td>
-                            <td style="" width="80">District</td>
+                            <!-- <td style="" width="90">User type</td> -->
+                            <!-- <td style="" width="80">District</td> -->
                             
                             <td style="">Show</td>
 
@@ -396,22 +396,22 @@ if($_GET['type']=="del")
                                     <td valign="top"><?=$row['username'];?></td>
 
                                     <td valign="top"><?=$row['password'];?></td>
-                                    <td valign="top">
-										<? $type=$users->getUserTypeById($row['user_type']); $typeGet=$conn->fetchArray($type); echo $typeGet['user_type'];?>
-                                  	</td>
-                                    <td valign="top">
+                                    <!-- <td valign="top">
+										<? //$type=$users->getUserTypeById($row['user_type']); $typeGet=$conn->fetchArray($type); echo $typeGet['user_type'];?>
+                                  	</td> -->
+                                    <!-- <td valign="top">
 										<?
-											if($row['district']!=0)
-                                        	{
-												$did=$row['district'];
-												$dist=mysql_query("select district_name from district where id='$did'");
-												$district_name=$conn->fetchArray($dist);
-												echo $district_name['district_name'];
-											}
-											else
-												echo "-";
+											// if($row['district']!=0)
+           //                              	{
+											// 	$did=$row['district'];
+											// 	$dist=mysql_query("select district_name from district where id='$did'");
+											// 	$district_name=$conn->fetchArray($dist);
+											// 	echo $district_name['district_name'];
+											// }
+											// else
+											// 	echo "-";
 										?>
-                                   	</td>
+                                   	</td> -->
 
                                     <td valign="top">
 

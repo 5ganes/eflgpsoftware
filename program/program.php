@@ -6,10 +6,10 @@
       exit();
     }
     include("../report/constants.php");
-    if($_SESSION['userType']!=USERDISTRICT)
-    {
-      header("location:../reportcentral.php");
-    }
+    // if($_SESSION['userType']!=USERDISTRICT)
+    // {
+    //   header("location:../reportcentral.php");
+    // }
     
     $showSaveForm = false;
     $showListing = false;
